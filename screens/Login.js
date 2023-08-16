@@ -1,9 +1,12 @@
-import { StyleSheet, View, Image, Text } from "react-native"
+import { StyleSheet, View, Image, Text, ImageBackground } from "react-native"
 
 export default function Login(){
     return(
         <View>
-            <Image style={styles.imagemLogin} source={require('../assets/natureza.jpg')} />
+            
+            <View>
+                <ImageBackground style={styles.imagemLogin} resizeMode="cover" source={require('../assets/natureza.jpg')} />
+            </View>
             <View style={styles.links}>
                 <Text style={{color: 'white', textDecorationLine: 'underline'}}>Esqueci a senha</Text>
                 <Text style={{color: 'white', textDecorationLine: 'underline'}}>Cadastre-se</Text>
@@ -14,12 +17,15 @@ export default function Login(){
 
 const styles = StyleSheet.create({
     links:{
-        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#1a4252'
+        backgroundColor: '#1a4252',
+        paddingVertical: 40,
+        height: '25%',
     },
     imagemLogin: {
-        flex: 3,
+        height: '75%',
+        backgroundColor: 'orange',
+        
     }
 })
