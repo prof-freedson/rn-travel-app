@@ -1,6 +1,6 @@
-import { StyleSheet, View, Image, Text, ImageBackground } from "react-native"
+import { StyleSheet, View, Image, Text, ImageBackground, Pressable } from "react-native"
 
-export default function Login(){
+export default function Login({ navigation }){
     return(
         <View>
             
@@ -9,7 +9,9 @@ export default function Login(){
             </View>
             <View style={styles.links}>
                 <Text style={{color: 'white', textDecorationLine: 'underline'}}>Esqueci a senha</Text>
+                <Pressable onPress={() => navigation.navigate('cadastro')}>
                 <Text style={{color: 'white', textDecorationLine: 'underline'}}>Cadastre-se</Text>
+                </Pressable>
             </View>
         </View>
     )

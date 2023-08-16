@@ -1,6 +1,6 @@
 import { StyleSheet, TextInput, View, Text, Pressable } from "react-native";
 
-export default function Cadastro() {
+export default function Cadastro({ navigation }) {
     return (
         <View style={styles.container}>
             <Text style={{ fontSize: 30, color: '#1a4252', fontWeight: 'bold' }}>Crie a sua conta</Text>
@@ -22,7 +22,9 @@ export default function Cadastro() {
             </View>
             <View style={styles.linkLogin}>
                 <Text>Já é cadastrado? </Text>
-                <Text style={{color: '#46a2c7', textDecorationLine: 'underline'}}>Login</Text>
+                <Pressable onPress={() => navigation.goBack()}>
+                    <Text style={{ color: '#46a2c7', textDecorationLine: 'underline' }}>Login</Text>
+                </Pressable>
             </View>
         </View>
     )
