@@ -5,7 +5,7 @@ export default function Login({ navigation }){
         <View>
             
             <View>
-                <ImageBackground style={styles.imagemLogin} resizeMode="cover" source={require('../assets/natureza.jpg')} />
+                <ImageBackground style={styles.imagemLogin} resizeMode="cover" source={require('../assets/images/natureza.jpg')} />
             </View>
             <View style={styles.links}>
                 <Text style={{color: 'white', textDecorationLine: 'underline'}}>Esqueci a senha</Text>
