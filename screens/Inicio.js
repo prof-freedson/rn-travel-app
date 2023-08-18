@@ -7,7 +7,7 @@ export default function Inicio() {
 
                 <Image style={styles.bannerNaturezaTop} source={require('../assets/natureza.jpg')} />
                 <View style={styles.bannerLogoTop}>
-                    <Image style={{height: 120, width: 120, paddingHorizontal: 20, paddingVertical: 20}} source={require('../assets/travel-app-logo.png')} />
+                    <Image style={{height: 120, width: 120, paddingHorizontal: 20, paddingVertical: 20, objectFit: 'contain'}} source={require('../assets/travel-app-logo.png')} />
                     <Text style={styles.bannerTextTop}>Bem vindo(a),{'\n'}Karina!</Text>
                 </View>
 
