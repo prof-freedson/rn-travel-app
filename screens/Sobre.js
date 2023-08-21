@@ -17,8 +17,8 @@ export default function Sobre() {
     return (
         <View style={styles.container}>
             <Text style={{fontSize: 40, color: '#1a4252', fontWeight: 'bold'}}>Travel App</Text>
-            <Image style={{marginVertical: 20, width: 30, height: 30, paddingVertical: 60, paddingHorizontal: 50}} source={require('../assets/images/travel-app-logo.png')}/>
-            <Text style={{color:'#46a2c7', textAlign: 'center'}}>{creditos}</Text>
+            <Image style={{width: 100, height: 100, objectFit: 'contain', marginVertical: 20}} source={require('../assets/images/travel-app-logo.png')}/>
+            <Text style={{color:'#46a2c7', textAlign: 'center'}}>© 2023 - Todos os direitos reservados.{`\n`}Desenvolvido por Tecaluga</Text>
             <Text style={{color:'#46a2c7', textAlign: 'center', marginVertical: 20}}>{sobre}</Text>
             <Pressable onPress={() => openBrowserAsync('https://github.com/prof-freedson/rn-travel-app')}>
                 <Feather name="github" size={30} color={'#46a2c7'}/>
