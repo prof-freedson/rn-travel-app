@@ -20,7 +20,7 @@ export default function InicioTeste() {
                 <Image style={styles.imagem} source={require('../assets/images/natureza.jpg')} />
                 <View style={styles.welcome}>
                     <Image source={require('../assets/images/travel-app-logo.png')} style={{ width: 130, height: 130, objectFit: 'contain' }} />
-                    <Text style={{color: 'white', fontSize: 35}}>Seja-bem vindo(a),{'\n'}Karina!</Text>
+                    <Text style={{color: 'white', fontSize: 35, fontFamily: 'playfair'}}>Seja-bem vindo(a),{'\n'}Karina!</Text>
                 </View>
             </View>
             <View style={styles.area}>
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     },
     welcome: {
         position: 'absolute',
-        top: 70,
+        top: 60,
         left: 20,
     },
     imagem: {
