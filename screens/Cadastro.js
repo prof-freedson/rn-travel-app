@@ -1,9 +1,17 @@
 import { StyleSheet, TextInput, View, Text, Pressable } from "react-native";
+import { useFonts, PlayfairDisplay_600SemiBold as playfair } from "@expo-google-fonts/playfair-display";
 
 export default function Cadastro({ navigation }) {
+    let [fontsLoaded, fontError] = useFonts({
+        playfair
+    });
+
+    if (!fontsLoaded && !fontError) {
+        return null;
+    }
     return (
         <View style={styles.container}>
-            <Text style={{ fontSize: 30, color: '#1a4252', fontWeight: 'bold' }}>Crie a sua conta</Text>
+            <Text style={{ fontSize: 30, color: '#1a4252', fontWeight: 'bold', fontFamily: 'playfair' }}>Crie a sua conta</Text>
             <TextInput style={styles.textoInput} placeholder="Seu nome" />
             <TextInput style={styles.textoInput} placeholder="Seu e-mail" />
             <TextInput style={styles.textoInput} placeholder="Seu endereço" />

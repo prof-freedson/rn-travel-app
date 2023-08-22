@@ -21,7 +21,7 @@ export default function Login({ navigation }) {
                     <TextInput style={styles.textoInput} placeholder="Sua senha" />
                 </View>
                 <View style={styles.botaoEntrarArea}>
-                    <Pressable style={styles.botaoEntrar}>
+                    <Pressable style={styles.botaoEntrar} onPress={()=> navigation.navigate('inicioteste')}>
                         <Text style={{ fontWeight: 'bold' }}>ENTRAR</Text>
                     </Pressable>
                 </View>

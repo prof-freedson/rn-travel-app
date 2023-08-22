@@ -1,18 +1,18 @@
-import { StyleSheet, View, Image, Text } from "react-native";
+import { StyleSheet, View, Image, Text, Pressable } from "react-native";
 import { FontAwesome, MaterialIcons, Foundation } from '@expo/vector-icons/'
 import { useFonts, PlayfairDisplay_600SemiBold as playfair } from "@expo-google-fonts/playfair-display";
 
-export default function InicioTeste() {
+export default function InicioTeste({ navigation }) {
 
     let [fontsLoaded, fontError] = useFonts({
         playfair
-      });
-    
-      if (!fontsLoaded && !fontError) {
-        return null;
-      }
+    });
 
-      
+    if (!fontsLoaded && !fontError) {
+        return null;
+    }
+
+
 
     return (
         <View style={styles.container}>
@@ -20,27 +20,31 @@ export default function InicioTeste() {
                 <Image style={styles.imagem} source={require('../assets/images/natureza.jpg')} />
                 <View style={styles.welcome}>
                     <Image source={require('../assets/images/travel-app-logo.png')} style={{ width: 130, height: 130, objectFit: 'contain' }} />
-                    <Text style={{color: 'white', fontSize: 35, fontFamily: 'playfair'}}>Seja-bem vindo(a),{'\n'}Karina!</Text>
+                    <Text style={{ color: 'white', fontSize: 35, fontFamily: 'playfair' }}>Seja-bem vindo(a),{'\n'}Karina!</Text>
                 </View>
             </View>
             <View style={styles.area}>
                 <View style={styles.safeCardArea}>
-                    <View style={styles.cartao}>
-                        <View style={styles.icone}>
-                            <FontAwesome name="plane" size={55} color='#46a2c7'  />
+                    <Pressable onPress={() => navigation.navigate('viagens')}>
+                        <View style={styles.cartao}>
+                            <View style={styles.icone}>
+                                <FontAwesome name="plane" size={55} color='#46a2c7' />
+                            </View>
+                            <View style={styles.titulo}>
+                                <Text >Viagens</Text>
+                            </View>
                         </View>
-                        <View style={styles.titulo}>
-                            <Text >Viagens</Text>
+                    </Pressable>
+                    <Pressable onPress={() => navigation.navigate('reservas')}>
+                        <View style={styles.cartao}>
+                            <View style={styles.icone}>
+                                <MaterialIcons name='single-bed' size={70} color='#46a2c7' />
+                            </View>
+                            <View style={styles.titulo}>
+                                <Text >Hotéis</Text>
+                            </View>
                         </View>
-                    </View>
-                    <View style={styles.cartao}>
-                        <View style={styles.icone}>
-                            <MaterialIcons name='single-bed' size={70} color='#46a2c7' />
-                        </View>
-                        <View style={styles.titulo}>
-                            <Text >Hotéis</Text>
-                        </View>
-                    </View>
+                    </Pressable>
                     <View style={styles.cartao}>
                         <View style={styles.icone}>
                             <Foundation name='map' size={50} color='#46a2c7' />
