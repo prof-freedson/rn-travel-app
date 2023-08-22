@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text, Pressable } from "react-native";
 import { useFonts, PlayfairDisplay_600SemiBold as playfair } from "@expo-google-fonts/playfair-display";
 
-export default function Reservas(){
+export default function Reservas({ navigation }){
     let [fontsLoaded, fontError] = useFonts({
         playfair
     });
@@ -15,7 +15,7 @@ export default function Reservas(){
             <View>
                 <Text>Nenhuma reserva marcada</Text>
             </View>
-            <Pressable style={styles.botaoReserva}>
+            <Pressable style={styles.botaoReserva} onPress={() => navigation.navigate('criarreserva')}>
                 <Text>AGENDAR NOVA RESERVA</Text>
             </Pressable>
         </View>

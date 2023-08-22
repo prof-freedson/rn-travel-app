@@ -9,6 +9,8 @@ import Viagens from "./screens/Viagens";
 import Sobre from "./screens/Sobre";
 import Teste from "./screens/Teste";
 import InicioTeste from "./screens/InicioTeste";
+import CriarViagem from "./screens/CriarViagem";
+import CriarReserva from "./screens/CriarReserva";
 
 const Stack = createNativeStackNavigator()
 
@@ -25,6 +27,8 @@ export default function App() {
         <Stack.Screen name='reservas' component={Reservas} />
         <Stack.Screen name='viagens' component={Viagens} />
         <Stack.Screen name='sobre' component={Sobre} />
+        <Stack.Screen name='criarviagem' component={CriarViagem} />
+        <Stack.Screen name='criarreserva' component={CriarReserva} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text, Pressable } from "react-native";
 import { useFonts, PlayfairDisplay_600SemiBold as playfair } from "@expo-google-fonts/playfair-display";
 
-export default function Viagens(){
+export default function Viagens({ navigation }){
     let [fontsLoaded, fontError] = useFonts({
         playfair
     });
@@ -15,7 +15,7 @@ export default function Viagens(){
             <View>
                 <Text>Nenhuma viagem marcada</Text>
             </View>
-            <Pressable style={styles.botaoViagem}>
+            <Pressable style={styles.botaoViagem} onPress={() => navigation.navigate('criarviagem')}>
                 <Text>AGENDAR NOVA VIAGEM</Text>
             </Pressable>
         </View>
