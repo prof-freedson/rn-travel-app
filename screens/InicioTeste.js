@@ -61,6 +61,16 @@ export default function InicioTeste({ navigation }) {
                             <Text >Restaurantes</Text>
                         </View>
                     </View>
+                    <Pressable onPress={() => navigation.navigate('sobre')}>
+                        <View style={styles.cartao}>
+                            <View style={styles.icone}>
+                                <MaterialIcons name='info-outline' size={55} color='#46a2c7' />
+                            </View>
+                            <View style={styles.titulo}>
+                                <Text >Sobre o app</Text>
+                            </View>
+                        </View>
+                    </Pressable>
                 </View>
             </View>
         </View>
