@@ -72,6 +72,17 @@ export default function InicioTeste({ navigation }) {
                         </View>
                     </Pressable>
                 </View>
+                <View style={styles.destinosArea}>
+                        <Text style={{color: 'white' }}>Destinos populares</Text>
+                        <View style={styles.destinosBotoes}>
+                            <Pressable style={styles.destinoItem}>
+                                <Text style={{ color: 'white' }}>Dubai, Asia</Text>
+                            </Pressable>
+                            <Pressable style={styles.destinoItem}>
+                                <Text style={{ color: 'white' }}>London, UK</Text>
+                            </Pressable>
+                        </View>
+                    </View>
             </View>
         </View>
     )
@@ -127,5 +138,25 @@ const styles = StyleSheet.create({
         backgroundColor: '#eacb57',
         width: 100,
         height: 30,
+    },
+    destinosArea: {
+        paddingHorizontal: 30,
+        width: '100%',
+        left: 0
+    },
+    destinoItem: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 5,
+        height: 40,
+        width: 120,
+        paddingHorizontal: 10,
+        backgroundColor: '#46a2c7'
+    },
+    destinosBotoes: {
+        marginTop: 10,
+        flexDirection: 'row',
+        width: '100%',
+        justifyContent: 'space-between',
     }
 })
