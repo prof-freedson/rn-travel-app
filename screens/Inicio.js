@@ -1,90 +1,148 @@
-import { StyleSheet, View, Image, Text, Pressable, ScrollView } from "react-native";
-import { useFonts } from 'expo-font';
-import { Feather } from '@expo/vector-icons'
+import { StyleSheet, View, Image, Text, Pressable } from "react-native";
+import { FontAwesome, MaterialIcons, Foundation } from '@expo/vector-icons/'
+import { useFonts, PlayfairDisplay_600SemiBold as playfair } from "@expo-google-fonts/playfair-display";
 
-export default function Inicio() {
-    const [fontsLoaded] = useFonts({
-        'Times-New-Roman': require('../assets/fonts/Times-New-Roman.ttf'),
+export default function InicioTeste({ navigation }) {
+
+    let [fontsLoaded, fontError] = useFonts({
+        playfair
     });
+
+    if (!fontsLoaded && !fontError) {
+        return null;
+    }
 
 
 
     return (
-        <View>
-            <View style={styles.bannerTop}>
-
-                <Image style={styles.bannerNaturezaTop} source={require('../assets/images/natureza.jpg')} />
-                <View style={styles.bannerLogoTop}>
-                    <Image style={{ height: 120, width: 120, paddingHorizontal: 20, paddingVertical: 20, objectFit: 'contain' }} source={require('../assets/images/travel-app-logo.png')} />
-                    <Text style={styles.bannerTextTop}>Bem vindo(a),{'\n'}Karina!</Text>
+        <View style={styles.container}>
+            <View style={styles.banner}>
+                <Image style={styles.imagem} source={require('../assets/images/natureza.jpg')} />
+                <View style={styles.welcome}>
+                    <Image source={require('../assets/images/travel-app-logo.png')} style={{ width: 130, height: 130, objectFit: 'contain' }} />
+                    <Text style={{ color: 'white', fontSize: 35, fontFamily: 'playfair' }}>Seja-bem vindo(a),{'\n'}Karina!</Text>
                 </View>
             </View>
-            <View style={styles.cardArea}>
-                <View style={styles.cardIcone}>
-                    <Feather name="send" size={40} color={'#2596be'} />
-                </View>
-                <View>
-                    <Text style={styles.cardNome}>Viagens</Text>
+            <View style={styles.area}>
+                <View style={styles.safeCardArea}>
+                    <Pressable onPress={() => navigation.navigate('viagens')}>
+                        <View style={styles.cartao}>
+                            <View style={styles.icone}>
+                                <FontAwesome name="plane" size={55} color='#46a2c7' />
+                            </View>
+                            <View style={styles.titulo}>
+                                <Text >Viagens</Text>
+                            </View>
+                        </View>
+                    </Pressable>
+                    <Pressable onPress={() => navigation.navigate('reservas')}>
+                        <View style={styles.cartao}>
+                            <View style={styles.icone}>
+                                <MaterialIcons name='single-bed' size={70} color='#46a2c7' />
+                            </View>
+                            <View style={styles.titulo}>
+                                <Text >Hotéis</Text>
+                            </View>
+                        </View>
+                    </Pressable>
+                    <View style={styles.cartao}>
+                        <View style={styles.icone}>
+                            <Foundation name='map' size={50} color='#46a2c7' />
+                        </View>
+                        <View style={styles.titulo}>
+                            <Text >Destinos</Text>
+                        </View>
+                    </View>
+                    <View style={styles.cartao}>
+                        <View style={styles.icone}>
+                            <MaterialIcons name='restaurant' size={55} color='#46a2c7' />
+                        </View>
+                        <View style={styles.titulo}>
+                            <Text >Restaurantes</Text>
+                        </View>
+                    </View>
+                    <Pressable onPress={() => navigation.navigate('sobre')}>
+                        <View style={styles.cartao}>
+                            <View style={styles.icone}>
+                                <MaterialIcons name='info-outline' size={55} color='#46a2c7' />
+                            </View>
+                            <View style={styles.titulo}>
+                                <Text >Sobre o app</Text>
+                            </View>
+                        </View>
+                    </Pressable>
                 </View>
                 <View style={styles.destinosArea}>
-                    <Text style={{ marginLeft: 50, color: 'white' }}>Destinos populares</Text>
-                    <View style={styles.destinosBotoes}>
-                        <Pressable style={styles.destinoItem}>
-                            <Text style={{ color: 'white' }}>Dubai, Asia</Text>
-                        </Pressable>
-                        <Pressable style={styles.destinoItem}>
-                            <Text style={{ color: 'white' }}>London, UK</Text>
-                        </Pressable>
+                        <Text style={{color: 'white' }}>Destinos populares</Text>
+                        <View style={styles.destinosBotoes}>
+                            <Pressable style={styles.destinoItem}>
+                                <Text style={{ color: 'white' }}>Dubai, Asia</Text>
+                            </Pressable>
+                            <Pressable style={styles.destinoItem}>
+                                <Text style={{ color: 'white' }}>London, UK</Text>
+                            </Pressable>
+                        </View>
                     </View>
-                </View>
             </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    bannerNaturezaTop: {
-        height: '78%',
+    container: {
+        flex: 1
+    },
+    banner: {
+        flex: 2,
+        backgroundColor: 'yellow'
+    },
+    area: {
+        flex: 3,
+        backgroundColor: '#0c2c39',
+        position: 'relative'
+    },
+    welcome: {
+        position: 'absolute',
+        top: 60,
+        left: 20,
+    },
+    imagem: {
+        objectFit: 'contain',
         position: 'relative',
-        left: -100
-
+        left: -140,
+        bottom: 20
     },
-    bannerLogoTop: {
-        position: "absolute",
-        top: '25%',
-        left: '10%'
-
+    cartao: {
+        padding: 10
     },
-    bannerTextTop: {
-        fontSize: 35,
-        color: 'white',
-        fontFamily: 'Times-New-Roman',
-        fontWeight: 'bold'
+    safeCardArea: {
+        paddingVertical: 40,
+        paddingHorizontal: 15,
+        flexDirection: 'row',
+        flexWrap: 'wrap'
     },
-    cardArea: {
-        position: "relative",
-        top: -100,
-        paddingVertical: 50,
-        backgroundColor: '#1a4252'
-    },
-    cardIcone: {
-        backgroundColor: 'white',
-        width: 80,
-        height: 80,
+    icone: {
+        borderTopLeftRadius: 5,
+        borderTopRightRadius: 5,
         alignItems: 'center',
         justifyContent: 'center',
-        borderTopLeftRadius: 5,
-        borderTopRightRadius: 5
+        backgroundColor: 'white',
+        width: 100,
+        height: 80
     },
-    cardNome: {
+    titulo: {
+        borderBottomLeftRadius: 5,
+        borderBottomRightRadius: 5,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#eacb57',
-        width: 80,
-        paddingVertical: 2,
-        textAlign: 'center',
-        borderBottomLeftRadius: 5,
-        borderBottomRightRadius: 5
+        width: 100,
+        height: 30,
+    },
+    destinosArea: {
+        paddingHorizontal: 30,
+        width: '100%',
+        left: 0
     },
     destinoItem: {
         alignItems: 'center',
@@ -99,6 +157,6 @@ const styles = StyleSheet.create({
         marginTop: 10,
         flexDirection: 'row',
         width: '100%',
-        justifyContent: 'space-evenly'
+        justifyContent: 'space-between',
     }
 })
