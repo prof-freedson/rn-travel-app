@@ -24,7 +24,7 @@ export default function Cadastro({ navigation }) {
                     <Text style={{ fontWeight: 'bold' }}>CADASTRAR</Text>
                 </Pressable>
                 <Text>ou</Text>
-                <Pressable style={styles.botaoCancelar}>
+                <Pressable onPress={() => navigation.goBack()} style={styles.botaoCancelar}>
                     <Text style={{ fontWeight: 'bold' }}>CANCELAR</Text>
                 </Pressable>
             </View>

@@ -12,7 +12,7 @@ export default function Viagens({ navigation }) {
     }
     return (
         <View style={styles.container}>
-            <Text style={{ fontSize: 30, color: '#1a4252', fontWeight: 'bold', fontFamily: 'playfair' }}>Minhas viagens</Text>
+            <Text style={{ fontSize: 30, color: '#1a4252', fontFamily: 'playfair' }}>Minhas viagens</Text>
             <ScrollView style={{ height: '100%' }}>
                 <View style={styles.cartaoViagem}>
                     <View style={styles.cartaoViagemSup}>

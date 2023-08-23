@@ -12,7 +12,7 @@ export default function CriarViagem({ navigation }) {
     }
     return (
         <View style={styles.container}>
-            <Text style={{ fontSize: 30, color: '#1a4252', fontWeight: 'bold', fontFamily: 'playfair' }}>Marcar uma viagem</Text>
+            <Text style={{ fontSize: 30, color: '#1a4252', fontFamily: 'playfair' }}>Marcar uma viagem</Text>
             <View style={styles.selecaoViagem}>
                 <Pressable onPress={() => navigation.navigate('reservas')}>
                     <View style={styles.cartao}>

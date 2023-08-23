@@ -12,12 +12,12 @@ export default function CriarReserva({ navigation }) {
     }
     return (
         <View style={styles.container}>
-            <Text style={{ fontSize: 30, color: '#1a4252', fontWeight: 'bold', fontFamily: 'playfair' }}>Agendar uma reserva</Text>
+            <Text style={{ fontSize: 30, color: '#1a4252', fontFamily: 'playfair' }}>Agendar uma reserva</Text>
             <View style={styles.selecaoViagem}>
                 <Pressable onPress={() => navigation.navigate('reservas')}>
                     <View style={styles.cartao}>
                         <View style={styles.icone}>
-                            <Image style={{width: 300, height: 120, objectFit: 'cover'}} source={require('../assets/images/ritz-hotel.jpg')}/>
+                            <Image style={{width: 300, height: 120, objectFit: 'cover', borderTopLeftRadius: 5, borderTopRightRadius: 5,}} source={require('../assets/images/ritz-hotel.jpg')}/>
                         </View>
                         <View style={styles.titulo}>
                             <Text style={{ color: 'white' }}>Ritz Hotel - Londres, UK</Text>
