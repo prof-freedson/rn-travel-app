@@ -11,7 +11,7 @@ export default function Cadastro({ navigation }) {
     }
     return (
         <View style={styles.container}>
-            <Text style={{ fontSize: 30, color: '#1a4252', fontWeight: 'bold', fontFamily: 'playfair' }}>Crie a sua conta</Text>
+            <Text style={{ fontSize: 30, color: '#1a4252', fontFamily: 'playfair' }}>Crie a sua conta</Text>
             <TextInput style={styles.textoInput} placeholder="Seu nome" />
             <TextInput style={styles.textoInput} placeholder="Seu e-mail" />
             <TextInput style={styles.textoInput} placeholder="Seu endereço" />
