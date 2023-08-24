@@ -1,7 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from "./screens/Login";
-import Splash from "./screens/Splash";
 import Cadastro from "./screens/Cadastro";
 import Inicio from "./screens/Inicio";
 import Reservas from "./screens/Reservas";
@@ -13,11 +12,10 @@ import CriarReserva from "./screens/CriarReserva";
 const Stack = createNativeStackNavigator()
 
 export default function App() {
-  return (
+    return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="login" screenOptions={{headerShown: false}}>
-        <Stack.Screen name='splash' component={Splash} />
-        <Stack.Screen name='login' component={Login} />
+      <Stack.Navigator initialRouteName="splash" screenOptions={{headerShown: false}}>
+      <Stack.Screen name="login" component={Login} />
         <Stack.Screen name='cadastro' component={Cadastro} />
         <Stack.Screen name='inicio' component={Inicio} />
         <Stack.Screen name='reservas' component={Reservas} />
@@ -29,3 +27,8 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+
+
+
+
