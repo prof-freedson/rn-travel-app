@@ -1,6 +1,7 @@
 import { StyleSheet, View, Text, Pressable, ScrollView } from "react-native";
 import { useFonts, PlayfairDisplay_600SemiBold as playfair } from "@expo-google-fonts/playfair-display";
 import { MaterialIcons} from '@expo/vector-icons/'
+import CartaoViagem from "../components/CartaoViagem";
 
 export default function Viagens({ navigation }) {
     let [fontsLoaded, fontError] = useFonts({
@@ -14,114 +15,34 @@ export default function Viagens({ navigation }) {
         <View style={styles.container}>
             <Text style={{ fontSize: 30, color: '#1a4252', fontFamily: 'playfair' }}>Minhas viagens</Text>
             <ScrollView style={{ height: '100%' }}>
-                <View style={styles.cartaoViagem}>
-                    <View style={styles.cartaoViagemSup}>
-                        <View style={styles.cartaoViagemDataHora}>
-                            <View style={styles.cartaoViagemData}>
-                                <Text>Sábado</Text>
-                                <Text>31/12/2022</Text>
-                            </View>
-                            <Text style={{fontSize: 18}}>22h00min</Text>
-                        </View>
-                        <Text style={{fontSize: 40, fontWeight: 'bold', color: '#0c2c3a'}}>J-1362073FCR</Text>
-                    </View>
-                    <View style={styles.cartaoViagemInf}>
-                        <MaterialIcons style={{marginRight: 10}} name="push-pin" color={'#f9d04c'} size={25}/>
-                        <Text style={{color: 'white'}}>
-                            Aeroporto de Congonhas (CGH){'\n'}São Paulo, SP
-                        </Text>
-                    </View>
-                </View>
-                <View style={styles.cartaoViagem}>
-                    <View style={styles.cartaoViagemSup}>
-                        <View style={styles.cartaoViagemDataHora}>
-                            <View style={styles.cartaoViagemData}>
-                                <Text>Sábado</Text>
-                                <Text>31/12/2022</Text>
-                            </View>
-                            <Text style={{fontSize: 18}}>22h00min</Text>
-                        </View>
-                        <Text style={{fontSize: 40, fontWeight: 'bold', color: '#0c2c3a'}}>J-1362073FCR</Text>
-                    </View>
-                    <View style={styles.cartaoViagemInf}>
-                        <MaterialIcons style={{marginRight: 10}} name="push-pin" color={'#f9d04c'} size={25}/>
-                        <Text style={{color: 'white'}}>
-                            Aeroporto de Congonhas (CGH){'\n'}São Paulo, SP
-                        </Text>
-                    </View>
-                </View>
-                <View style={styles.cartaoViagem}>
-                    <View style={styles.cartaoViagemSup}>
-                        <View style={styles.cartaoViagemDataHora}>
-                            <View style={styles.cartaoViagemData}>
-                                <Text>Sábado</Text>
-                                <Text>31/12/2022</Text>
-                            </View>
-                            <Text style={{fontSize: 18}}>22h00min</Text>
-                        </View>
-                        <Text style={{fontSize: 40, fontWeight: 'bold', color: '#0c2c3a'}}>J-1362073FCR</Text>
-                    </View>
-                    <View style={styles.cartaoViagemInf}>
-                        <MaterialIcons style={{marginRight: 10}} name="push-pin" color={'#f9d04c'} size={25}/>
-                        <Text style={{color: 'white'}}>
-                            Aeroporto de Congonhas (CGH){'\n'}São Paulo, SP
-                        </Text>
-                    </View>
-                </View>
-                <View style={styles.cartaoViagem}>
-                    <View style={styles.cartaoViagemSup}>
-                        <View style={styles.cartaoViagemDataHora}>
-                            <View style={styles.cartaoViagemData}>
-                                <Text>Sábado</Text>
-                                <Text>31/12/2022</Text>
-                            </View>
-                            <Text style={{fontSize: 18}}>22h00min</Text>
-                        </View>
-                        <Text style={{fontSize: 40, fontWeight: 'bold', color: '#0c2c3a'}}>J-1362073FCR</Text>
-                    </View>
-                    <View style={styles.cartaoViagemInf}>
-                        <MaterialIcons style={{marginRight: 10}} name="push-pin" color={'#f9d04c'} size={25}/>
-                        <Text style={{color: 'white'}}>
-                            Aeroporto de Congonhas (CGH){'\n'}São Paulo, SP
-                        </Text>
-                    </View>
-                </View>
-                <View style={styles.cartaoViagem}>
-                    <View style={styles.cartaoViagemSup}>
-                        <View style={styles.cartaoViagemDataHora}>
-                            <View style={styles.cartaoViagemData}>
-                                <Text>Sábado</Text>
-                                <Text>31/12/2022</Text>
-                            </View>
-                            <Text style={{fontSize: 18}}>22h00min</Text>
-                        </View>
-                        <Text style={{fontSize: 40, fontWeight: 'bold', color: '#0c2c3a'}}>J-1362073FCR</Text>
-                    </View>
-                    <View style={styles.cartaoViagemInf}>
-                        <MaterialIcons style={{marginRight: 10}} name="push-pin" color={'#f9d04c'} size={25}/>
-                        <Text style={{color: 'white'}}>
-                            Aeroporto de Congonhas (CGH){'\n'}São Paulo, SP
-                        </Text>
-                    </View>
-                </View>
-                <View style={styles.cartaoViagem}>
-                    <View style={styles.cartaoViagemSup}>
-                        <View style={styles.cartaoViagemDataHora}>
-                            <View style={styles.cartaoViagemData}>
-                                <Text>Sábado</Text>
-                                <Text>31/12/2022</Text>
-                            </View>
-                            <Text style={{fontSize: 18}}>22h00min</Text>
-                        </View>
-                        <Text style={{fontSize: 40, fontWeight: 'bold', color: '#0c2c3a'}}>J-1362073FCR</Text>
-                    </View>
-                    <View style={styles.cartaoViagemInf}>
-                        <MaterialIcons style={{marginRight: 10}} name="push-pin" color={'#f9d04c'} size={25}/>
-                        <Text style={{color: 'white'}}>
-                            Aeroporto de Congonhas (CGH){'\n'}São Paulo, SP
-                        </Text>
-                    </View>
-                </View>
+                <CartaoViagem
+                diaSemana="Sábado"
+                dataViagem="31/12/2022"
+                horaViagem="22h00min"
+                codViagem="J-1362073FCR"
+                nomeAero="Aeroporto de Congonhas"
+                codAero="CGH"
+                localAero="São Paulo, SP"
+                />
+                <CartaoViagem
+                diaSemana="Domingo"
+                dataViagem="31/03/2023"
+                horaViagem="17h30min"
+                codViagem="J-73FCR13620"
+                nomeAero="Aeroporto Santos Dumont"
+                codAero="SDU"
+                localAero="Rio de Janeiro, RJ"
+                />
+                <CartaoViagem
+                diaSemana="Quarta"
+                dataViagem="01/07/2023"
+                horaViagem="03h30min"
+                codViagem="J-7313620FCR"
+                nomeAero="Aeroporto Salgado Filho"
+                codAero="POA"
+                localAero="Rio Grande do Sul, RS"
+                />
+                
             </ScrollView>
             <Pressable style={styles.botaoViagem} onPress={() => navigation.navigate('criarviagem')}>
                 <Text>AGENDAR NOVA VIAGEM</Text>
