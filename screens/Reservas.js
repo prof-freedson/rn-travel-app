@@ -1,5 +1,6 @@
 import { StyleSheet, View, Text, Pressable, Image, ScrollView } from "react-native";
 import { useFonts, PlayfairDisplay_600SemiBold as playfair } from "@expo-google-fonts/playfair-display";
+import CartaoReserva from "../components/CartaoReserva";
 
 export default function Reservas({ navigation }) {
     let [fontsLoaded, fontError] = useFonts({
@@ -12,105 +13,44 @@ export default function Reservas({ navigation }) {
     return (
         <View style={styles.container}>
             <Text style={{ fontSize: 30, color: '#1a4252', fontFamily: 'playfair' }}>Minhas reservas</Text>
-            <ScrollView style={{ height: '100%' }}>
+            <ScrollView style={{ height: '100%' }}>        
+                <CartaoReserva
+                nomeHotel="The Ritz Hotel"
+                localHotel="Londres, UK"
+                dataEntrada="01/01/2023"
+                dataSaida="04/01/2023"
+                preco="899"
+                imagem={require('../assets/images/ritz-hotel.jpg')}
+                />
                 <View style={styles.cartaoReserva}>
                     <View style={styles.cartaoReservaSup}>
                         <View style={styles.cartaoReservaTitulo}>
                             <View style={{ justifyContent: 'space-around', height: 70 }}>
-                                <Text><Text style={{ fontSize: 20, fontWeight: 'bold' }}>The Ritz Hotel</Text>{'\n'}Londres, UK</Text>
-                                <Text>01/01/2023 a 04/01/2023</Text>
+                                <Text><Text style={{ fontSize: 20, fontWeight: 'bold' }}>Pod Times Square</Text>{'\n'}Nova Iorque, EUA</Text>
+                                <Text>01/03/2023 a 04/03/2023</Text>
                             </View>
-                            <Text style={{ fontSize: 30, fontWeight: 'bold' }}>$899</Text>
+                            <Text style={{ fontSize: 30, fontWeight: 'bold' }}>$677</Text>
                         </View>
                     </View>
                     <View style={styles.cartaoReservaInf}>
-                        <Image style={{ width: 350, objectFit: 'cover' }} source={require('../assets/images/ritz-hotel.jpg')} />
+                        <Image style={{ width: 350, height: 150, objectFit: 'cover' }} source={require('../assets/images/pod-times-square.jpg')} />
                     </View>
                 </View>
                 <View style={styles.cartaoReserva}>
                     <View style={styles.cartaoReservaSup}>
                         <View style={styles.cartaoReservaTitulo}>
                             <View style={{ justifyContent: 'space-around', height: 70 }}>
-                                <Text><Text style={{ fontSize: 20, fontWeight: 'bold' }}>The Ritz Hotel</Text>{'\n'}Londres, UK</Text>
-                                <Text>01/01/2023 a 04/01/2023</Text>
+                                <Text><Text style={{ fontSize: 20, fontWeight: 'bold' }}>Jeri Village Hotel</Text>{'\n'}Jericoacara, Brasil</Text>
+                                <Text>01/07/2023 a 04/07/2023</Text>
                             </View>
-                            <Text style={{ fontSize: 30, fontWeight: 'bold' }}>$899</Text>
+                            <Text style={{ fontSize: 30, fontWeight: 'bold' }}>$276</Text>
                         </View>
                     </View>
                     <View style={styles.cartaoReservaInf}>
-                        <Image style={{ width: 350, objectFit: 'cover' }} source={require('../assets/images/ritz-hotel.jpg')} />
+                        <Image style={{ width: 350, height: 150, objectFit: 'cover' }} source={require('../assets/images/jeri-hotel.jpg')} />
                     </View>
                 </View>
-                <View style={styles.cartaoReserva}>
-                    <View style={styles.cartaoReservaSup}>
-                        <View style={styles.cartaoReservaTitulo}>
-                            <View style={{ justifyContent: 'space-around', height: 70 }}>
-                                <Text><Text style={{ fontSize: 20, fontWeight: 'bold' }}>The Ritz Hotel</Text>{'\n'}Londres, UK</Text>
-                                <Text>01/01/2023 a 04/01/2023</Text>
-                            </View>
-                            <Text style={{ fontSize: 30, fontWeight: 'bold' }}>$899</Text>
-                        </View>
-                    </View>
-                    <View style={styles.cartaoReservaInf}>
-                        <Image style={{ width: 350, objectFit: 'cover' }} source={require('../assets/images/ritz-hotel.jpg')} />
-                    </View>
-                </View>
-                <View style={styles.cartaoReserva}>
-                    <View style={styles.cartaoReservaSup}>
-                        <View style={styles.cartaoReservaTitulo}>
-                            <View style={{ justifyContent: 'space-around', height: 70 }}>
-                                <Text><Text style={{ fontSize: 20, fontWeight: 'bold' }}>The Ritz Hotel</Text>{'\n'}Londres, UK</Text>
-                                <Text>01/01/2023 a 04/01/2023</Text>
-                            </View>
-                            <Text style={{ fontSize: 30, fontWeight: 'bold' }}>$899</Text>
-                        </View>
-                    </View>
-                    <View style={styles.cartaoReservaInf}>
-                        <Image style={{ width: 350, objectFit: 'cover' }} source={require('../assets/images/ritz-hotel.jpg')} />
-                    </View>
-                </View>
-                <View style={styles.cartaoReserva}>
-                    <View style={styles.cartaoReservaSup}>
-                        <View style={styles.cartaoReservaTitulo}>
-                            <View style={{ justifyContent: 'space-around', height: 70 }}>
-                                <Text><Text style={{ fontSize: 20, fontWeight: 'bold' }}>The Ritz Hotel</Text>{'\n'}Londres, UK</Text>
-                                <Text>01/01/2023 a 04/01/2023</Text>
-                            </View>
-                            <Text style={{ fontSize: 30, fontWeight: 'bold' }}>$899</Text>
-                        </View>
-                    </View>
-                    <View style={styles.cartaoReservaInf}>
-                        <Image style={{ width: 350, objectFit: 'cover' }} source={require('../assets/images/ritz-hotel.jpg')} />
-                    </View>
-                </View>
-                <View style={styles.cartaoReserva}>
-                    <View style={styles.cartaoReservaSup}>
-                        <View style={styles.cartaoReservaTitulo}>
-                            <View style={{ justifyContent: 'space-around', height: 70 }}>
-                                <Text><Text style={{ fontSize: 20, fontWeight: 'bold' }}>The Ritz Hotel</Text>{'\n'}Londres, UK</Text>
-                                <Text>01/01/2023 a 04/01/2023</Text>
-                            </View>
-                            <Text style={{ fontSize: 30, fontWeight: 'bold' }}>$899</Text>
-                        </View>
-                    </View>
-                    <View style={styles.cartaoReservaInf}>
-                        <Image style={{ width: 350, objectFit: 'cover' }} source={require('../assets/images/ritz-hotel.jpg')} />
-                    </View>
-                </View>
-                <View style={styles.cartaoReserva}>
-                    <View style={styles.cartaoReservaSup}>
-                        <View style={styles.cartaoReservaTitulo}>
-                            <View style={{ justifyContent: 'space-around', height: 70 }}>
-                                <Text><Text style={{ fontSize: 20, fontWeight: 'bold' }}>The Ritz Hotel</Text>{'\n'}Londres, UK</Text>
-                                <Text>01/01/2023 a 04/01/2023</Text>
-                            </View>
-                            <Text style={{ fontSize: 30, fontWeight: 'bold' }}>$899</Text>
-                        </View>
-                    </View>
-                    <View style={styles.cartaoReservaInf}>
-                        <Image style={{ width: 350, objectFit: 'cover' }} source={require('../assets/images/ritz-hotel.jpg')} />
-                    </View>
-                </View>
+                
             </ScrollView>
             <Pressable style={styles.botaoReserva} onPress={() => navigation.navigate('criarreserva')}>
                 <Text>AGENDAR NOVA RESERVA</Text>
