@@ -1,3 +1,14 @@
+/*
+
+Instalar os seguintes pacotes:
+
+1) npx expo install @react-native-community/datetimepicker
+
+2) npm install date-fns
+
+
+*/
+
 import React, { useState } from 'react';
 import { View, Button, Text, Platform, Modal, TouchableOpacity, StyleSheet } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
@@ -31,6 +42,7 @@ export default function App() {
         <Button onPress={showDatepicker} title="Selecionar Data" />
       </View>
       {showPicker && (
+        // Exibição do calendário com DateTimePicker
         <DateTimePicker
           testID="dateTimePicker"
           value={selectedDate}
@@ -39,6 +51,7 @@ export default function App() {
           display="default"
           onChange={onChange}
         />
+        // Fim da exibição do calendário com DateTimePicker
       )}
       <Text>Data selecionada: {formattedDate}</Text>
 
@@ -47,11 +60,14 @@ export default function App() {
         <Text style={styles.timeButton}>{selectedTime}</Text>
       </TouchableOpacity>
 
+      {/* Configuração do Modal */}
       <Modal
         visible={showTimeModal}
         transparent={true}
         animationType="slide"
+      //Final da configuração do modal
       >
+        {/* Elementos que serão exibidos no Modal */}
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
             {timeOptions.map((time, index) => (
@@ -67,6 +83,7 @@ export default function App() {
               </TouchableOpacity>
             ))}
           </View>
+          {/* Final dos elementos que serão exibidos no Modal  */}
         </View>
       </Modal>
     </View>
