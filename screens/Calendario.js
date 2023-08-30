@@ -1,19 +1,17 @@
-/*
-Instalar os pacotes:
-
-npx expo install @react-native-community/datetimepicker
-npm install date-fns
- */
-
-
 import React, { useState } from 'react';
-import { View, Button, Text, Platform } from 'react-native';
+import { View, Button, Text, Platform, Modal, TouchableOpacity, StyleSheet } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { format } from 'date-fns';
 
-export default function Calendario() {
+export default function App() {
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedTime, setSelectedTime] = useState('08:00');
   const [showPicker, setShowPicker] = useState(false);
+  const [showTimeModal, setShowTimeModal] = useState(false); // Estado para controlar a visibilidade do Modal
+
+  const timeOptions = [
+    '08:00', '09:00', '10:00', '11:00', '12:00',
+  ];
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || selectedDate;
@@ -43,6 +41,60 @@ export default function Calendario() {
         />
       )}
       <Text>Data selecionada: {formattedDate}</Text>
+
+      <TouchableOpacity onPress={() => setShowTimeModal(true)}>
+        <Text>Selecione um horário:</Text>
+        <Text style={styles.timeButton}>{selectedTime}</Text>
+      </TouchableOpacity>
+
+      <Modal
+        visible={showTimeModal}
+        transparent={true}
+        animationType="slide"
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            {timeOptions.map((time, index) => (
+              <TouchableOpacity
+                key={index}
+                style={styles.timeOption}
+                onPress={() => {
+                  setSelectedTime(time);
+                  setShowTimeModal(false);
+                }}
+              >
+                <Text>{time}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  timeButton: {
+    padding: 10,
+    borderWidth: 1,
+    borderColor: '#333',
+    marginTop: 5,
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  modalContent: {
+    backgroundColor: 'white',
+    padding: 20,
+    borderRadius: 10,
+    width: 250,
+  },
+  timeOption: {
+    paddingVertical: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+  },
+});
