@@ -8,13 +8,14 @@ import Viagens from "./screens/Viagens";
 import Sobre from "./screens/Sobre";
 import CriarViagem from "./screens/CriarViagem";
 import CriarReserva from "./screens/CriarReserva";
+import Calendario from "./screens/Calendario";
 
 const Stack = createNativeStackNavigator()
 
 export default function App() {
     return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="reservas" screenOptions={{headerShown: false}}>
+      <Stack.Navigator initialRouteName="calendario" screenOptions={{headerShown: false}}>
       <Stack.Screen name="login" component={Login} />
         <Stack.Screen name='cadastro' component={Cadastro} />
         <Stack.Screen name='inicio' component={Inicio} />
@@ -23,6 +24,7 @@ export default function App() {
         <Stack.Screen name='sobre' component={Sobre} />
         <Stack.Screen name='criarviagem' component={CriarViagem} />
         <Stack.Screen name='criarreserva' component={CriarReserva} />
+        <Stack.Screen name='calendario' component={Calendario} />
       </Stack.Navigator>
     </NavigationContainer>
   );
