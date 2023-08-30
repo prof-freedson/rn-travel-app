@@ -1,3 +1,11 @@
+/*
+Instalar os pacotes:
+
+npx expo install @react-native-community/datetimepicker
+npm install date-fns
+ */
+
+
 import React, { useState } from 'react';
 import { View, Button, Text, Platform } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
